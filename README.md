@@ -21,13 +21,13 @@ Le projet s'appuie sur le jeu de données KDD Cup 1990, qui est largement utilis
    cd nom-du-repo
 3. Installez les dépendances requises : 
    ```bash
-pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn joblib
+   pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn joblib
 
 ## Utilisation
 1. Assurez-vous d'avoir le fichier de données kddcup.data_10_percent dans le répertoire de travail.
 2. Exécutez le script :
    ```bash
-python IDS_PROJECT.py
+   python IDS_PROJECT.py
 
 Ce script chargera les données, les prétraitera, appliquera l'oversampling SMOTE pour équilibrer les classes, et entraînera plusieurs modèles d'apprentissage automatique.
 
