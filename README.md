@@ -15,13 +15,11 @@ Ce projet implémente un système de détection d'intrusion (IDS) utilisant plus
 Le projet s'appuie sur le jeu de données KDD Cup 1990, qui est largement utilisé pour le développement et l'évaluation des systèmes de détection d'intrusion. Les données comprennent diverses caractéristiques des connexions réseau, qui sont utilisées pour prédire si la connexion est une intrusion ou non.
 
 ## Installation
-1. Clonez le dépôt :
-   
+1. Clonez le dépôt : 
    ```bash
    git clone https://github.com/votre-utilisateur/nom-du-repo.git
    cd nom-du-repo
-3. Installez les dépendances requises :
-   
+3. Installez les dépendances requises : 
    ```bash
 pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn joblib
 
