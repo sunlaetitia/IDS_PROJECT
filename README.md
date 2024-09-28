@@ -16,10 +16,12 @@ Le projet s'appuie sur le jeu de données KDD Cup 1990, qui est largement utilis
 
 ## Installation
 1. Clonez le dépôt :
+   
    ```bash
    git clone https://github.com/votre-utilisateur/nom-du-repo.git
    cd nom-du-repo
-2. Installez les dépendances requises :
+3. Installez les dépendances requises :
+   
    ```bash
 pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn joblib
 
