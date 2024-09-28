@@ -1,84 +1,58 @@
-# Projet : Système de Détection d'Intrusion (IDS) Basé sur l'Apprentissage Automatique
+# Système de Détection d'Intrusion Basé sur l'Apprentissage Automatique
 
-# Description
-Ce projet implémente un système de détection d'intrusion (IDS) utilisant plusieurs algorithmes de machine learning pour détecter des comportements anormaux dans les réseaux. Les modèles entraînés incluent SVM, Forêt Aléatoire, Réseau de Neurones, Régression Logistique et Arbre de Décision. Une interface utilisateur est développée avec Flask pour permettre le téléchargement et l'analyse d'ensembles de données personnalisés.
+Ce projet implémente un système de détection d'intrusion (IDS) utilisant plusieurs algorithmes d'apprentissage automatique sur le jeu de données KDD Cup 1990. L'objectif principal est de détecter des intrusions dans un réseau en classifiant les connexions réseau comme normales ou malveillantes.
 
-# Fonctionnalités
-Précision, Rappel, F1-score : Évaluation de la performance des modèles.
-Rééchantillonnage : Utilisation de SMOTE pour équilibrer les classes.
-Visualisation : Graphiques avec Matplotlib et Seaborn.
-Interface Flask : Téléchargement d'ensembles de données personnalisés.
-Support de Modèles : SVM, Forêt Aléatoire, Réseau de Neurones, Régression Logistique, Arbre de Décision.
-Réduction de dimensionnalité : PCA pour visualisation des données.
+## Table des Matières
+- [Contexte](#contexte)
+- [Installation](#installation)
+- [Utilisation](#utilisation)
+- [Résultats](#résultats)
+- [Modèles Utilisés](#modèles-utilisés)
+- [Conclusion](#conclusion)
+- [Auteurs](#auteurs)
 
-# Prérequis
-Python 3.x
-Packages : pandas, numpy, scikit-learn, matplotlib, seaborn, joblib, imblearn, flask
+## Contexte
+Le projet s'appuie sur le jeu de données KDD Cup 1990, qui est largement utilisé pour le développement et l'évaluation des systèmes de détection d'intrusion. Les données comprennent diverses caractéristiques des connexions réseau, qui sont utilisées pour prédire si la connexion est une intrusion ou non.
 
-# Installation
-Clonez le dépôt GitHub :
+## Installation
+1. Clonez le dépôt :
+   ```bash
+   git clone https://github.com/votre-utilisateur/nom-du-repo.git
+   cd nom-du-repo
+2. Installez les dépendances requises :
+   ```bash
+pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn joblib
 
-git clone https://github.com/votre_utilisateur/ids_project.git
-cd ids_project
-Créez et activez un environnement virtuel :
-bash
-Copier le code
-python -m venv myenv
-source myenv/bin/activate  # Sous Windows : myenv\Scripts\activate
-Installez les dépendances :
-bash
-Copier le code
-pip install -r requirements.txt
+## Utilisation
+1. Assurez-vous d'avoir le fichier de données kddcup.data_10_percent dans le répertoire de travail.
+2. Exécutez le script :
+   ```bash
+python IDS_PROJECT.py
 
-# Utilisation
-Exécution du script principal :
+Ce script chargera les données, les prétraitera, appliquera l'oversampling SMOTE pour équilibrer les classes, et entraînera plusieurs modèles d'apprentissage automatique.
 
-bash
-Copier le code
-python script.py
-Lancer l'interface Flask :
+## Résultats
+Le script affiche :
 
-bash
-Copier le code
-export FLASK_APP=app.py
-flask run
-Accédez à l'interface via http://127.0.0.1:5000.
+Un aperçu des données.
+- La distribution des classes avant rééchantillonnage.
+- Des rapports de classification pour chaque modèle.
+- Des matrices de confusion pour visualiser les performances des modèles.
+- Des courbes ROC pour évaluer les performances des modèles.
 
-# Fonctionnalités Clés
-Rééchantillonnage avec SMOTE : Gère les classes déséquilibrées pour améliorer les performances de détection.
-Visualisation PCA : Permet de comprendre la distribution des données.
-Évaluation des Modèles : Fournit des métriques de performance détaillées pour chaque modèle.
-Interface Utilisateur Conviviale : Les utilisateurs peuvent facilement télécharger et analyser leurs propres ensembles de données.
+## Modèles Utilisés
+Le projet teste les modèles suivants :
 
-# Exemple de Sortie
-yaml
-Copier le code
-Distribution des classes avant rééchantillonnage :
-normal.             7787
-smurf.              2207
-buffer_overflow.       2
-neptune.               2
-loadmodule.            1
-perl.                  1
-Name: count, dtype: int64
+- Support Vector Machine (SVM)
+- Forêt Aléatoire
+- Réseau de Neurones Multi-Couches (MLP)
+- Régression Logistique
+- Arbre de Décision
 
-Aperçu des données :
-   duree type_protocole  ... taux_erreur_srv_hote_dst etiquette
-0      0            tcp  ...                      0.0   normal.
-1      0            tcp  ...                      0.0   normal.
-2      0            tcp  ...                      0.0   normal.
-3      0            tcp  ...                      0.0   normal.
-4      0            tcp  ...                      0.0   normal.
+Les modèles sont entraînés et évalués sur un ensemble de données d'entraînement et de test.
 
---- SVM ---
-              precision    recall  f1-score   support
+## Conclusion
+Ce projet démontre comment utiliser l'apprentissage automatique pour détecter des intrusions dans un réseau en utilisant des techniques de prétraitement des données et d'équilibrage des classes. Les résultats peuvent être améliorés en explorant d'autres modèles ou en ajustant les hyperparamètres.
 
-           0       1.00      1.00      1.00      2351
-           1       1.00      1.00      1.00      2322
-
-    accuracy                           1.00      4673
-   macro avg       1.00      1.00      1.00      4673
-weighted avg       1.00      1.00      1.00      4673
-
-# Auteur
-PIAHA SUN
+## Auteurs
+Sun PIAHA
